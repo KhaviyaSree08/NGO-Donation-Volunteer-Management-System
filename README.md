@@ -7,8 +7,8 @@ Many NGOs face challenges in maintaining donor databases, tracking donation hist
 Solution: This system provides a centralized digital platform to manage donations, volunteer assignments, and event-related activities seamlessly.
 
 # Target Users
-- NGO Administrators:Manage events, track donations, and assign volunteers.
-- Donors:Contribute funds and view their donation history.
+- NGO Administrators: Manage events, track donations, and assign volunteers.
+- Donors: Contribute funds and view their donation history.
 - Volunteers: Register, update availability, and participate in events.
 - Event Coordinators: Oversee specific events and volunteer allocation.
 
@@ -20,7 +20,8 @@ Solution: This system provides a centralized digital platform to manage donation
 - Reporting for donations, events, and volunteer contributions  
 
 # Tech Stack
-- Frontend: JavaFX(For UI Design)  
+- Frontend: JavaFX(For UI Design)
+- Backend: Java with JDBC  
 - Database: MySQL  
 
 
