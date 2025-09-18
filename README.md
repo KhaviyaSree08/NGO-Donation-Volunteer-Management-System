@@ -47,5 +47,5 @@ Solution: This system provides a centralized digital platform to manage donation
   Methods: recordDonation(), generateReceipt()  
 
 - **Admin (extends User)**  
-  Methods: createEvent(), manageVolunteers(), generateReports()  
+  Methods: createEvent(), manageVolunteers(), generateReports()--
 
