@@ -25,7 +25,8 @@ Many NGOs face challenges in maintaining donor databases, tracking donation hist
 - **Database:** MySQL  
 
 ## Class Design (UML)
-classDiagram
+
+
     User <|-- Donor
     User <|-- Volunteer
     User <|-- Admin
