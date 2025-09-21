@@ -25,7 +25,6 @@ public class User {
     public String toString() {
         return "ID: "+iuserId+",Name: "+sname+ ",Email: "+semail+ ",Phone: "+sphone;
     }
-
     public static void main(String[] args) {
         User user = new User(1, "Khaviya", "khaviya@gmail.com", "6380115521");
         user.login();
