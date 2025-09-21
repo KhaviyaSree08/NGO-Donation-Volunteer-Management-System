@@ -26,6 +26,9 @@ public class Event {
         return eventName;
     }
 
+    public int getEventId(){
+        return eventId;   }
+
     @Override
     public String toString() {
         return "Event ID: " + eventId + ",Name: "+eventName+", Date: "+date+", Location: "+location;

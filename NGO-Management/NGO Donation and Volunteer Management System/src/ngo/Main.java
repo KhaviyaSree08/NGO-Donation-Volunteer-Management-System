@@ -66,7 +66,7 @@ public class Main {
         donors.forEach(System.out::println);
         int id=sc.nextInt();
 	    sc.nextLine();
-        Donor donor=donors.stream().filter(d -> d.userId == id).findFirst().orElse(null);
+        Donor donor=donors.stream().filter(d -> d.iuserId==id).findFirst().orElse(null);
         if(donor!=null) {
             System.out.print("Enter Amount: "); 
             double amount=sc.nextDouble(); 		   
@@ -106,6 +106,39 @@ public class Main {
         events.add(event);
         System.out.println("Event created: "+event);
     }
+    private static void assignVolunteer() {
+        if(events.isEmpty()||volunteers.isEmpty()) { 
+	        System.out.println("No events or volunteers!");
+	        return; 
+	    }
+        System.out.println("Select Event by ID:"); 
+	    events.forEach(System.out::println);
+        int eid=sc.nextInt(); 
+	    sc.nextLine();
+        Event event=events.stream().filter(e -> e.eventId==eid).findFirst().orElse(null);
+        if (event==null){ 
+		System.out.println("Invalid Event ID!");
+		return; 
+	    }
+
+        System.out.println("Select Volunteer by ID:"); 
+	    volunteers.forEach(System.out::println);
+        int vid=sc.nextInt(); 
+	    sc.nextLine();
+        Volunteer volunteer = volunteers.stream().filter(v -> v.userId == vid).findFirst().orElse(null);
+        if(volunteer!=null) {
+            event.assignVolunteer(volunteer);
+            volunteer.assignToEvent(event);
+        }else System.out.println("Invalid Volunteer ID!");
+    }
+
+    private static void generateReports() {
+        Admin admin=new Admin(0,"Admin","admin@ngo.org","6543210987");
+        admin.generateReports(donors);
+        admin.manageVolunteers(volunteers);
+    }
+}
+
 
 
 
