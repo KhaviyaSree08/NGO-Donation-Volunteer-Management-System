@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Donor extends User {
-    // Inner Donation class
+    //Donation class
     public class Donation {
         private double amount;
 
@@ -48,7 +48,7 @@ public class Donor extends User {
     }
 
     public static void main(String[] args) {
-        Donor donor = new Donor(2, "Oviya", "oviya@gmail.com", "986543210");
+        Donor donor = new Donor(2,"Oviya", "oviya@gmail.com", "986543210");
         Donor.Donation donation1 = donor.new Donation(1000);
         Donor.Donation donation2 = donor.new Donation(500);
         donor.makeDonation(donation1);
