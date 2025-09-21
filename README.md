@@ -25,6 +25,59 @@ Many NGOs face challenges in maintaining donor databases, tracking donation hist
 - **Database:** MySQL  
 
 ## Class Design (UML)
+classDiagram
+    User <|-- Donor
+    User <|-- Volunteer
+    User <|-- Admin
+    Donor "1" --> "many" Donation
+    Event "1" --> "many" Volunteer
+
+    class User {
+      -int iuserId
+      -String sname
+      -String semail
+      -String sphone
+      +login()
+      +logout()
+    }
+
+    class Donor {
+      -double totaldonated
+      +makeDonation()
+      +viewDonationHistory()
+    }
+
+    class Volunteer {
+      -String skills
+      -String availability
+      +updateAvailability()
+      +assignToEvent()
+    }
+
+    class Event {
+      -int eventId
+      -String eventName
+      -String date
+      -String location
+      +addEvent()
+      +assignVolunteer()
+    }
+
+    class Donation {
+      -int donationId
+      -double amount
+      -String paymentMode
+      -LocalDate donationDate
+      +getAmount()
+      +generateReceipt()
+    }
+
+    class Admin {
+      +createEvent()
+      +manageVolunteers()
+      +generateReports()
+    }
+
 ### Main Classes:
 - **User (Base Class)**  
   Attributes: iuserId, sname, semail, sphone  
