@@ -79,7 +79,35 @@ public class Main {
             donation.generateReceipt();
         }else System.out.println("Invalid Donor ID!");
     }
+    private static void registerVolunteer() {
+        System.out.print("Enter Name: "); 
+	    String name=sc.nextLine();
+        System.out.print("Enter Email: ");
+	    String email=sc.nextLine();
+        System.out.print("Enter Phone: ");
+	    String phone=sc.nextLine();
+        System.out.print("Enter Skills: "); 
+	    String skills=sc.nextLine();
+        System.out.print("Enter Availability: ");
+	    String availability=sc.nextLine();
+        Volunteer volunteer=new Volunteer(volunteerIdCounter++, name,email,phone,skills,availability);
+	    volunteers.add(volunteer);
+        System.out.println("Volunteer registered: "+volunteer);
+    }
 
-    
+    private static void createEvent() {
+        System.out.print("Enter Event Name: "); 
+	    String name=sc.nextLine();
+        System.out.print("Enter Event Date: ");
+	    String date=sc.nextLine();
+        System.out.print("Enter Event Location: ");
+	    String location=sc.nextLine();
+        Event event=new Event(eventIdCounter++,name,date,location);
+        events.add(event);
+        System.out.println("Event created: "+event);
+    }
+
+
+
 
     
