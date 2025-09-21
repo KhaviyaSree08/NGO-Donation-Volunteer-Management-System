@@ -45,4 +45,41 @@ public class Main {
             }
         }
     }
+    private static void registerDonor() {
+        System.out.print("Enter Name: "); 
+	    String name=sc.nextLine();
+        System.out.print("Enter Email: "); 
+	    String email=sc.nextLine();
+        System.out.print("Enter Phone: "); 
+	    String phone=sc.nextLine();
+        Donor donor=new Donor(donorIdCounter++, name, email, phone);
+        donors.add(donor);
+        System.out.println("Donor registered: " +donor);
+    }
+
+    private static void makeDonation() {
+        if(donors.isEmpty()) { 
+		System.out.println("No donors registered!");
+		return; 
+	}
+        System.out.println("Select Donor by ID:");
+        donors.forEach(System.out::println);
+        int id=sc.nextInt();
+	    sc.nextLine();
+        Donor donor=donors.stream().filter(d -> d.userId == id).findFirst().orElse(null);
+        if(donor!=null) {
+            System.out.print("Enter Amount: "); 
+            double amount=sc.nextDouble(); 		   
+	    sc.nextLine();
+            System.out.print("Enter Payment Mode: ");
+	    String mode=sc.nextLine();
+            Donation donation=new Donation(donationIdCounter++, amount, mode);
+            donor.makeDonation(donation);
+            donations.add(donation);
+            donation.generateReceipt();
+        }else System.out.println("Invalid Donor ID!");
+    }
+
+    
+
     
