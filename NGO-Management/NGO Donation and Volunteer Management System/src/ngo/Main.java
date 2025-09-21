@@ -115,7 +115,7 @@ public class Main {
 	    events.forEach(System.out::println);
         int eid=sc.nextInt(); 
 	    sc.nextLine();
-        Event event=events.stream().filter(e -> e.eventId==eid).findFirst().orElse(null);
+        Event event=events.stream().filter(e -> e.getEventId()==eid).findFirst().orElse(null);
         if (event==null){ 
 		System.out.println("Invalid Event ID!");
 		return; 
@@ -125,7 +125,7 @@ public class Main {
 	    volunteers.forEach(System.out::println);
         int vid=sc.nextInt(); 
 	    sc.nextLine();
-        Volunteer volunteer = volunteers.stream().filter(v -> v.userId == vid).findFirst().orElse(null);
+        Volunteer volunteer = volunteers.stream().filter(v -> v.iuserId == vid).findFirst().orElse(null);
         if(volunteer!=null) {
             event.assignVolunteer(volunteer);
             volunteer.assignToEvent(event);

@@ -27,7 +27,8 @@ public class Event {
     }
 
     public int getEventId(){
-        return eventId;   }
+        return eventId;   
+    }
 
     @Override
     public String toString() {
